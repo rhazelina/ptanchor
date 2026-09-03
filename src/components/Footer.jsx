@@ -25,9 +25,8 @@ export default function Footer({
 
   return (
     <footer
-      className={`bg-anchor-navy text-white font-body border-t border-anchor-navy-dark ${className} ${
-        disabled ? 'pointer-events-none opacity-60' : ''
-      }`}
+      className={`bg-anchor-navy text-white font-body border-t border-anchor-navy-dark ${className} ${disabled ? 'pointer-events-none opacity-60' : ''
+        }`}
     >
       {/* Editorial Hairline Top Accent Rule */}
       <div className="h-[3px] bg-grain-gold w-full" aria-hidden="true" />
@@ -63,7 +62,7 @@ export default function Footer({
           <div className="shrink-0 bg-anchor-navy-dark border border-white/20 rounded-sm p-4 w-full sm:w-auto">
             <div className="text-[11px] font-mono text-grain-gold uppercase tracking-wider mb-2 flex items-center gap-1.5 font-medium">
               <ShieldCheck size={13} className="text-grain-gold" />
-              <span>DOKUMEN KONTROL: SALURAN RESMI</span>
+              <span>SALURAN RESMI</span>
             </div>
             <a
               href={disabled ? undefined : waLink('Halo PT Anchor Pakan Jaya, saya ingin berkonsultasi mengenai produk.')}
@@ -78,12 +77,9 @@ export default function Footer({
           </div>
         </div>
 
-        {/* Section 2: Spec Register Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-8 lg:gap-12 py-10 border-b border-white/15">
-          {/* Register 01: Physical Address & Logistics */}
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span className="text-slate-light font-normal">REGISTER 01 //</span>
               <span>KANTOR &amp; GUDANG PUSAT</span>
             </h2>
             <div className="flex gap-3 text-[13px] text-limestone leading-relaxed">
@@ -96,10 +92,8 @@ export default function Footer({
             </div>
           </div>
 
-          {/* Register 02: Direct Technical Contacts */}
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span className="text-slate-light font-normal">REGISTER 02 //</span>
               <span>KONTAK SPESIFIKASI</span>
             </h2>
             <ul className="space-y-2.5 text-[13px] w-full min-w-0">
@@ -145,10 +139,8 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Register 03: Document Index / Navigation */}
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span className="text-slate-light font-normal">REGISTER 03 //</span>
               <span>INDEX DOKUMEN</span>
             </h2>
             <nav aria-label="Navigasi Footer" className="w-full min-w-0">
@@ -182,17 +174,17 @@ export default function Footer({
             <span>© {currentYear} PT ANCHOR PAKAN JAYA. ALL RIGHTS RESERVED.</span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-light">
+          {/* <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-light">
             <span>PREMIX &amp; ADITIF</span>
             <span className="text-grain-gold">·</span>
             <span>ACIDIFIER &amp; BINDER</span>
             <span className="text-grain-gold">·</span>
             <span>MINERAL &amp; AMINO</span>
-          </div>
-
+          </div> */}
+          {/* 
           <div>
             <span className="text-grain-gold font-semibold tracking-wider">ISO 9001:2015 AUDITED</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -37,7 +37,8 @@
   --color-white: #FFFFFF;
 
   /* ---- Utility (bukan bagian palet brand, dipakai terbatas) ---- */
-  --color-whatsapp: #25D366; /* pengecualian disengaja: ikon WA pakai warna resminya */
+  --color-whatsapp: #25D366;
+  /* pengecualian disengaja: ikon WA pakai warna resminya */
   --color-danger: #A6432E;
 
   /* ---- Semantic tokens (pakai ini di komponen, bukan raw color) ---- */
@@ -66,15 +67,24 @@
   --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
   --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 
-  --fs-display-xl: 3.5rem;   /* 56px */
-  --fs-h1: 2.5rem;           /* 40px */
-  --fs-h2: 2rem;             /* 32px */
-  --fs-h3: 1.5rem;           /* 24px */
-  --fs-h4: 1.25rem;          /* 20px */
-  --fs-body-lg: 1.125rem;    /* 18px */
-  --fs-body: 1rem;           /* 16px */
-  --fs-small: 0.875rem;      /* 14px */
-  --fs-micro: 0.8125rem;     /* 13px */
+  --fs-display-xl: 3.5rem;
+  /* 56px */
+  --fs-h1: 2.5rem;
+  /* 40px */
+  --fs-h2: 2rem;
+  /* 32px */
+  --fs-h3: 1.5rem;
+  /* 24px */
+  --fs-h4: 1.25rem;
+  /* 20px */
+  --fs-body-lg: 1.125rem;
+  /* 18px */
+  --fs-body: 1rem;
+  /* 16px */
+  --fs-small: 0.875rem;
+  /* 14px */
+  --fs-micro: 0.8125rem;
+  /* 13px */
 
   --lh-display: 1.1;
   --lh-heading: 1.2;
@@ -86,24 +96,38 @@
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  --measure: 68ch; /* lebar baca maksimal untuk paragraf */
+  --measure: 68ch;
+  /* lebar baca maksimal untuk paragraf */
 
   /* ---- Spacing scale (basis 4px) ---- */
-  --space-1: 0.25rem;  /* 4px */
-  --space-2: 0.5rem;   /* 8px */
-  --space-3: 0.75rem;  /* 12px */
-  --space-4: 1rem;     /* 16px */
-  --space-5: 1.5rem;   /* 24px */
-  --space-6: 2rem;     /* 32px */
-  --space-7: 3rem;     /* 48px */
-  --space-8: 4rem;     /* 64px */
-  --space-9: 6rem;     /* 96px */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.5rem;
+  /* 24px */
+  --space-6: 2rem;
+  /* 32px */
+  --space-7: 3rem;
+  /* 48px */
+  --space-8: 4rem;
+  /* 64px */
+  --space-9: 6rem;
+  /* 96px */
 
   /* ---- Radius (dibedakan sesuai hierarki elemen, lihat design-system.md) ---- */
-  --radius-sharp: 0px;    /* baris tabel/manifest, divider */
-  --radius-sm: 2px;       /* tombol, input, tag */
-  --radius-md: 4px;       /* panel/card besar */
-  --radius-full: 999px;   /* hanya tombol aksi mengambang */
+  --radius-sharp: 0px;
+  /* baris tabel/manifest, divider */
+  --radius-sm: 2px;
+  /* tombol, input, tag */
+  --radius-md: 4px;
+  /* panel/card besar */
+  --radius-full: 999px;
+  /* hanya tombol aksi mengambang */
 
   /* ---- Elevation (dipakai terbatas, hanya elemen melayang) ---- */
   --shadow-float: 0 6px 20px rgba(28, 58, 75, 0.25);
@@ -128,7 +152,14 @@
    Base reset ringan — sesuaikan dengan kebutuhan proyek
    ========================================================================== */
 
-*, *::before, *::after {
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height, 0);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -142,14 +173,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   line-height: var(--lh-heading);
   margin: 0 0 var(--space-4);
   font-weight: var(--fw-semibold);
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: var(--font-body);
   font-weight: var(--fw-semibold);
   margin: 0 0 var(--space-3);
@@ -165,7 +200,10 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

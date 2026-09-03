@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react'
-import { Menu, X, MessageCircle, ShieldCheck, Phone } from 'lucide-react'
+import { Menu, X, MessageCircle, Phone } from 'lucide-react'
 import AnchorLogo from './AnchorLogo.jsx'
 import Button from './Button.jsx'
 import { waLink } from '../data/products.js'
@@ -55,14 +55,11 @@ export default function Header({
             <span className="text-slate">REG: SP-998/SUB</span>
             <span className="text-slate-light">│</span>
             <span className="text-slate">ISO 9001:2015 CERTIFIED</span>
+            <span className="text-slate-light">│</span>
+            <span className="text-slate">NPWP: 1921012001656000</span>
           </div>
 
           <div className="flex items-center gap-4 text-[11px]">
-            <span className="inline-flex items-center gap-1.5 text-pasture-green font-medium">
-              <span className="h-1.5 w-1.5 rounded-full bg-pasture-green animate-pulse" />
-              STATUS: PENGIRIMAN AKTIF
-            </span>
-            <span className="text-slate-light">│</span>
             <a
               href="tel:+62315550192"
               className="inline-flex items-center gap-1 text-slate hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-grain-gold"
@@ -99,9 +96,8 @@ export default function Header({
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Navigasi Utama"
-            className={`hidden md:flex items-center self-stretch gap-1 text-[14px] font-body ${
-              disabled ? 'pointer-events-none opacity-50' : ''
-            }`}
+            className={`hidden md:flex items-center self-stretch gap-1 text-[14px] font-body ${disabled ? 'pointer-events-none opacity-50' : ''
+              }`}
           >
             {navItems.map((item) => {
               const active = isNavActive(item.href)
@@ -110,16 +106,15 @@ export default function Header({
                   key={item.href}
                   href={item.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`relative flex items-center h-full px-4 font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold focus-visible:ring-offset-1 rounded-t-sm ${
-                    active
-                      ? 'text-anchor-navy font-semibold bg-limestone/40'
-                      : 'text-slate hover:text-ink hover:bg-limestone/20'
-                  }`}
+                  className={`relative flex items-center h-full px-4 font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold focus-visible:ring-offset-1 rounded-t-sm group ${active
+                    ? 'text-anchor-navy font-semibold bg-limestone/50'
+                    : 'text-slate hover:text-anchor-navy hover:bg-limestone/30'
+                    }`}
                 >
-                  <span className="font-mono text-[10px] text-slate-light mr-1.5">
+                  <span className={`font-mono text-[10px] mr-1.5 transition-colors ${active ? 'text-grain-gold-dark font-semibold' : 'text-slate-light group-hover:text-grain-gold-dark'}`}>
                     {item.code}
                   </span>
-                  <span>{item.label}</span>
+                  <span className={`transition-colors ${active ? 'text-anchor-navy font-semibold' : 'text-ink group-hover:text-anchor-navy'}`}>{item.label}</span>
 
                   {/* Hairline Indicator */}
                   {active && (
@@ -159,12 +154,12 @@ export default function Header({
           <button
             type="button"
             disabled={disabled}
-            className="md:hidden flex items-center justify-center h-10 w-10 min-h-[44px] min-w-[44px] -mr-2 text-anchor-navy hover:bg-limestone rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold"
+            className="md:hidden flex items-center justify-center h-10 w-10 min-h-[44px] min-w-[44px] -mr-1 text-anchor-navy bg-paper hover:bg-limestone border border-limestone-dark/80 rounded-xs transition-all duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold active:scale-95"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? 'Tutup menu' : 'Buka menu'}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} className="text-anchor-navy" /> : <Menu size={20} className="text-anchor-navy" />}
           </button>
         </div>
       </div>
@@ -173,55 +168,55 @@ export default function Header({
       {mobileOpen && (
         <nav
           aria-label="Navigasi Seluler"
-          className="md:hidden border-t border-limestone-dark bg-paper animate-fadeIn"
+          className="md:hidden border-t border-limestone-dark bg-paper animate-fadeIn shadow-md"
         >
-          <div className="mx-auto max-w-[1200px] px-5 py-4 flex flex-col gap-1">
-            <div className="pb-2 border-b border-limestone-dark/50 mb-2 flex items-center justify-between text-[11px] font-mono text-slate uppercase">
-              <span>Spesifikasi Navigasi</span>
-              <span className="inline-flex items-center gap-1 text-pasture-green">
-                <ShieldCheck size={12} /> Terverifikasi
-              </span>
+          <div className="mx-auto max-w-[1200px] px-5 py-4 flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
+              {navItems.map((item) => {
+                const active = isNavActive(item.href)
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={active ? 'page' : undefined}
+                    className={`flex items-center justify-between py-3 px-3.5 rounded-xs text-[14px] font-body transition-all duration-fast group ${active
+                      ? 'bg-anchor-navy text-white font-semibold shadow-xs'
+                      : 'text-ink bg-white/40 hover:bg-limestone hover:text-anchor-navy border border-limestone-dark/40'
+                      }`}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span
+                        className={`font-mono text-[11px] font-semibold ${active ? 'text-grain-gold' : 'text-slate group-hover:text-grain-gold-dark'
+                          }`}
+                      >
+                        {item.code}
+                      </span>
+                      <span className={active ? 'text-white font-semibold' : 'text-ink group-hover:text-anchor-navy'}>
+                        {item.label}
+                      </span>
+                    </span>
+                    {active && <span className="h-1.5 w-1.5 rounded-full bg-grain-gold shrink-0" />}
+                  </a>
+                )
+              })}
             </div>
 
-            {navItems.map((item) => {
-              const active = isNavActive(item.href)
-              return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  aria-current={active ? 'page' : undefined}
-                  className={`flex items-center justify-between py-3 px-3 rounded-sm text-[15px] font-body transition-colors ${
-                    active
-                      ? 'bg-anchor-navy text-white font-semibold'
-                      : 'text-ink hover:bg-limestone hover:text-anchor-navy'
-                  }`}
-                >
-                  <span className="flex items-center gap-2">
-                    <span
-                      className={`font-mono text-[11px] ${
-                        active ? 'text-grain-gold' : 'text-slate'
-                      }`}
-                    >
-                      {item.code}
-                    </span>
-                    <span>{item.label}</span>
-                  </span>
-                  {active && <span className="h-1.5 w-1.5 rounded-full bg-grain-gold" />}
-                </a>
-              )
-            })}
-
-            <div className="pt-4 border-t border-limestone-dark/60 mt-2">
+            <div className="pt-3 border-t border-limestone-dark/60 mt-1 space-y-2">
               <Button
                 as="a"
                 variant="whatsapp"
                 href={waLink('Halo PT Anchor Pakan Jaya, saya ingin berkonsultasi mengenai produk.')}
-                className="w-full justify-center py-3"
+                className="w-full justify-center py-3 shadow-none border border-whatsapp/20"
               >
                 <MessageCircle size={16} />
                 <span>Hubungi Sales WhatsApp</span>
               </Button>
+
+              <div className="flex items-center justify-between px-2 pt-1 font-mono text-[10px] text-slate-light">
+                <span>(031) 555-0192</span>
+                <span>ISO 9001:2015 CERTIFIED</span>
+              </div>
             </div>
           </div>
         </nav>
