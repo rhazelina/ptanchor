@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — PT Anchor Pakan Jaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-anchor-navy: #1C3A4B;
+    --color-anchor-navy-dark: #122733;
+    --color-anchor-navy-light: #2E5266;
+    --color-grain-gold: #C89A3E;
+    --color-grain-gold-dark: #A47D2E;
+    --color-grain-gold-light: #E0B968;
+    --color-pasture-green: #4B6B4E;
+    --color-pasture-green-dark: #38513A;
+    --color-limestone: #E7E7DF;
+    --color-limestone-dark: #D8D8CC;
+    --color-slate: #83807A;
+    --color-slate-light: #ABA8A1;
+    --color-ink: #1F2421;
+    --color-paper: #FBFBF8;
+    --color-white: #FFFFFF;
+    --color-whatsapp: #25D366;
+
+    --font-display: 'Zilla Slab', Georgia, serif;
+    --font-body: 'Public Sans', -apple-system, sans-serif;
+
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+    --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+
+    --radius-sharp: 0px; --radius-sm: 2px; --radius-md: 4px; --radius-full: 999px;
+    --border-hairline: 1px solid var(--color-limestone-dark);
+    --ease-standard: cubic-bezier(0.4,0,0.2,1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-5);
+  }
+
+  @media (min-width: 900px) {
+    .container { padding: 0 var(--space-8); }
+  }
+
+  /* ---------- Top nav demo ---------- */
+  .topnav {
+    border-bottom: var(--border-hairline);
+    background: var(--color-paper);
+  }
+  .topnav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-anchor-navy);
+  }
+  .brand svg { width: 26px; height: 26px; color: var(--color-anchor-navy); }
+  .nav-links {
+    display: none;
+    gap: var(--space-6);
+    font-size: 15px;
+    color: var(--color-ink);
+  }
+  @media (min-width: 700px) { .nav-links { display: flex; } }
+
+  /* ---------- Section wrapper ---------- */
+  section.block {
+    padding: var(--space-8) 0;
+    border-bottom: var(--border-hairline);
+  }
+  .block h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0 0 var(--space-2);
+  }
+  .block .desc {
+    color: var(--color-slate);
+    font-size: 15px;
+    max-width: 62ch;
+    margin: 0 0 var(--space-6);
+  }
+
+  /* ---------- Hero mockup ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-8) 0;
+  }
+  @media (min-width: 900px) {
+    .hero { grid-template-columns: 1.4fr 1fr; align-items: center; }
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 0 0 var(--space-4);
+    max-width: 14ch;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--color-slate);
+    max-width: 46ch;
+    margin: 0 0 var(--space-6);
+  }
+  .hero-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+
+  .manifest-panel {
+    background: var(--color-anchor-navy);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .manifest-panel .watermark {
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    width: 180px;
+    height: 180px;
+    color: var(--color-white);
+    opacity: 0.06;
+  }
+  .manifest-panel .row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    font-size: 14px;
+    position: relative;
+  }
+  .manifest-panel .row:last-child { border-bottom: none; }
+  .manifest-panel .row .label { color: var(--color-grain-gold-light); }
+  .manifest-panel .row .value { font-weight: 600; }
+
+  /* ---------- Color swatches ---------- */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  @media (min-width: 700px) { .swatch-grid { grid-template-columns: repeat(4, 1fr); } }
+  .swatch { border: var(--border-hairline); }
+  .swatch .fill { height: 100px; }
+  .swatch .meta { padding: var(--space-3); background: var(--color-white); }
+  .swatch .name { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .swatch .hex { font-size: 13px; color: var(--color-slate); }
+  .swatch .usage { font-size: 12px; color: var(--color-slate); margin-top: var(--space-2); }
+
+  /* ---------- Typography specimen ---------- */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-bottom: var(--border-hairline);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-row .label {
+    width: 140px;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--color-slate);
+  }
+  .type-sample.display-xl { font-family: var(--font-display); font-weight: 600; font-size: 44px; line-height: 1.1; margin:0; }
+  .type-sample.h1 { font-family: var(--font-display); font-weight: 600; font-size: 34px; margin:0; }
+  .type-sample.h2 { font-family: var(--font-display); font-weight: 600; font-size: 27px; margin:0; }
+  .type-sample.h3 { font-family: var(--font-display); font-weight: 500; font-size: 21px; margin:0; }
+  .type-sample.h4 { font-family: var(--font-body); font-weight: 600; font-size: 18px; margin:0; }
+  .type-sample.body-lg { font-family: var(--font-body); font-weight: 400; font-size: 17px; margin:0; }
+  .type-sample.body { font-family: var(--font-body); font-weight: 400; font-size: 15px; margin:0; }
+  .type-sample.micro { font-family: var(--font-body); font-weight: 500; font-size: 12.5px; margin:0; color: var(--color-slate); }
+
+  /* ---------- Buttons ---------- */
+  .row-flex { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background var(--ease-standard) 120ms, border-color var(--ease-standard) 120ms, color var(--ease-standard) 120ms;
+  }
+  .btn-primary { background: var(--color-anchor-navy); color: var(--color-white); }
+  .btn-primary:hover { background: var(--color-anchor-navy-dark); }
+  .btn-secondary { background: transparent; color: var(--color-anchor-navy); border: 1.5px solid var(--color-anchor-navy); }
+  .btn-secondary:hover { background: var(--color-limestone); }
+  .btn-tertiary { background: transparent; color: var(--color-grain-gold-dark); border: none; padding-left: 0; padding-right: 0; text-decoration: none; border-bottom: 1.5px solid transparent; }
+  .btn-tertiary:hover { border-bottom-color: var(--color-grain-gold-dark); }
+  .btn-disabled { background: var(--color-limestone-dark); color: var(--color-slate); cursor: not-allowed; }
+
+  /* ---------- Tags ---------- */
+  .tag {
+    display: inline-block;
+    background: var(--color-pasture-green);
+    color: var(--color-white);
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ---------- Form ---------- */
+  .form-demo { max-width: 340px; }
+  .field { margin-bottom: var(--space-4); }
+  .field label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+    color: var(--color-ink);
+  }
+  .field input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-slate-light);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 120ms var(--ease-standard), box-shadow 120ms var(--ease-standard);
+  }
+  .field input:focus {
+    border-color: var(--color-anchor-navy);
+    box-shadow: 0 0 0 3px rgba(200,154,62,0.35);
+  }
+  .field .helper { font-size: 12px; color: var(--color-slate); margin-top: 4px; }
+
+  /* ---------- Manifest rows (product list) ---------- */
+  .manifest-list { border-top: var(--border-hairline); }
+  .m-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) 0;
+    border-bottom: var(--border-hairline);
+    transition: background 120ms var(--ease-standard);
+  }
+  .m-row:hover { background: var(--color-limestone); }
+  .m-row .name { font-family: var(--font-display); font-weight: 500; font-size: 17px; }
+  .m-row .field-label { font-size: 11px; color: var(--color-slate); display: block; margin-bottom: 2px; }
+  .m-row .field-value { font-size: 14px; font-weight: 500; }
+  .m-row .action { text-align: right; }
+  .m-head {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: var(--space-4);
+    padding-bottom: var(--space-2);
+    font-size: 11px;
+    color: var(--color-slate);
+    font-weight: 500;
+  }
+  @media (max-width: 640px) {
+    .m-row, .m-head { grid-template-columns: 1fr 1fr; }
+    .m-head { display: none; }
+  }
+
+  /* ---------- Spacing/radius scale ---------- */
+  .scale-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3); }
+  .scale-bar { background: var(--color-grain-gold); height: 14px; }
+  .scale-label { font-size: 13px; color: var(--color-slate); width: 90px; }
+
+  .radius-demo { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+  .radius-box {
+    width: 80px; height: 80px;
+    background: var(--color-anchor-navy);
+    display: flex; align-items: flex-end; justify-content: center;
+    color: var(--color-white); font-size: 11px; padding-bottom: 6px;
+  }
+
+  /* ---------- WhatsApp float demo ---------- */
+  .fab-demo {
+    width: 56px; height: 56px;
+    background: var(--color-whatsapp);
+    border-radius: var(--radius-full);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(28,58,75,0.25);
+    color: white;
+  }
+
+  /* ---------- Do/Don't ---------- */
+  .dodont { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 700px) { .dodont { grid-template-columns: 1fr 1fr; } }
+  .dodont ul { margin: 0; padding-left: 20px; font-size: 14.5px; }
+  .dodont li { margin-bottom: var(--space-2); }
+  .dodont h3 { font-family: var(--font-body); font-size: 15px; font-weight: 600; margin: 0 0 var(--space-3); }
+
+  footer.credits {
+    padding: var(--space-6) 0 var(--space-8);
+    font-size: 13px;
+    color: var(--color-slate);
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="container">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="10" r="6"/>
+        <line x1="32" y1="16" x2="32" y2="52"/>
+        <line x1="18" y1="24" x2="46" y2="24"/>
+        <path d="M12 34c0 12 9 20 20 22"/>
+        <path d="M52 34c0 12-9 20-20 22"/>
+      </svg>
+      Anchor Pakan Jaya
+    </div>
+    <div class="nav-links">
+      <span>Produk</span><span>Tentang Kami</span><span>Kontak</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO MOCKUP -->
+  <section class="hero">
+    <div>
+      <h1>Bahan baku pakan ternak yang konsisten mutunya</h1>
+      <p>Memasok mineral dan bahan baku pakan untuk pabrik pakan, distributor, dan peternak skala besar di seluruh Indonesia.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Lihat produk</button>
+        <button class="btn btn-secondary">Hubungi sales</button>
+      </div>
+    </div>
+    <div class="manifest-panel">
+      <svg class="watermark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3">
+        <circle cx="32" cy="10" r="6"/>
+        <line x1="32" y1="16" x2="32" y2="52"/>
+        <line x1="18" y1="24" x2="46" y2="24"/>
+        <path d="M12 34c0 12 9 20 20 22"/>
+        <path d="M52 34c0 12-9 20-20 22"/>
+      </svg>
+      <div class="row"><span class="label">Kapasitas produksi</span><span class="value">— ton/bulan</span></div>
+      <div class="row"><span class="label">Sertifikasi</span><span class="value">ISO, GMP+*</span></div>
+      <div class="row"><span class="label">Melayani sejak</span><span class="value">20xx</span></div>
+      <div class="row"><span class="label">Area distribusi</span><span class="value">Nasional</span></div>
+    </div>
+  </section>
+
+  <!-- COLOR PALETTE -->
+  <section class="block">
+    <h2>Palet warna</h2>
+    <p class="desc">Enam warna inti. Anchor Navy sebagai warna brand utama, Grain Gold sebagai aksen, Pasture Green untuk kategori/tag, dan tiga warna netral untuk latar & teks.</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-anchor-navy)"></div>
+        <div class="meta"><div class="name">Anchor Navy</div><div class="hex">#1C3A4B</div><div class="usage">Brand utama, tombol primer</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-grain-gold)"></div>
+        <div class="meta"><div class="name">Grain Gold</div><div class="hex">#C89A3E</div><div class="usage">Aksen, hover, highlight</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-pasture-green)"></div>
+        <div class="meta"><div class="name">Pasture Green</div><div class="hex">#4B6B4E</div><div class="usage">Tag kategori, status sukses</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-limestone)"></div>
+        <div class="meta"><div class="name">Limestone</div><div class="hex">#E7E7DF</div><div class="usage">Latar netral, section alternatif</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-slate)"></div>
+        <div class="meta"><div class="name">Slate Grey</div><div class="hex">#83807A</div><div class="usage">Teks sekunder, border</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-ink)"></div>
+        <div class="meta"><div class="name">Ink</div><div class="hex">#1F2421</div><div class="usage">Teks utama</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-paper); border-bottom:var(--border-hairline)"></div>
+        <div class="meta"><div class="name">Paper</div><div class="hex">#FBFBF8</div><div class="usage">Latar dasar halaman</div></div>
+      </div>
+      <div class="swatch">
+        <div class="fill" style="background:var(--color-white); border-bottom:var(--border-hairline)"></div>
+        <div class="meta"><div class="name">White</div><div class="hex">#FFFFFF</div><div class="usage">Permukaan card/panel</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="block">
+    <h2>Tipografi</h2>
+    <p class="desc">Zilla Slab untuk heading (kokoh, karakter "dicap"), Public Sans untuk body &amp; UI (sangat legible untuk data spesifikasi).</p>
+    <div class="type-row"><span class="label">Display XL / 56px</span><p class="type-sample display-xl">Bahan baku pakan</p></div>
+    <div class="type-row"><span class="label">H1 / 40px</span><p class="type-sample h1">Produk mineral pakan</p></div>
+    <div class="type-row"><span class="label">H2 / 32px</span><p class="type-sample h2">Kategori produk kami</p></div>
+    <div class="type-row"><span class="label">H3 / 24px</span><p class="type-sample h3">Zeolit pakan grade A</p></div>
+    <div class="type-row"><span class="label">H4 / 20px</span><p class="type-sample h4">Spesifikasi produk</p></div>
+    <div class="type-row"><span class="label">Body large / 18px</span><p class="type-sample body-lg">Kami memasok bahan baku pakan dengan mutu konsisten untuk pabrik pakan skala nasional.</p></div>
+    <div class="type-row"><span class="label">Body / 16px</span><p class="type-sample body">Setiap produk melalui pengujian kualitas sebelum dikirim ke pelanggan.</p></div>
+    <div class="type-row"><span class="label">Micro / 13px</span><p class="type-sample micro">GRADE · KEMASAN 25KG</p></div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="block">
+    <h2>Tombol</h2>
+    <p class="desc">Label memakai kata kerja aktif, tanpa tanda panah tambahan.</p>
+    <div class="row-flex">
+      <button class="btn btn-primary">Minta penawaran</button>
+      <button class="btn btn-secondary">Lihat spesifikasi</button>
+      <button class="btn btn-tertiary">Baca selengkapnya</button>
+      <button class="btn btn-disabled" disabled>Stok habis</button>
+    </div>
+  </section>
+
+  <!-- TAGS -->
+  <section class="block">
+    <h2>Tag kategori</h2>
+    <p class="desc">Dipakai konsisten di kartu &amp; halaman detail produk.</p>
+    <div class="row-flex">
+      <span class="tag">Unggas</span>
+      <span class="tag">Ruminansia</span>
+      <span class="tag">Aquaculture</span>
+      <span class="tag">Toxin binder</span>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="block">
+    <h2>Form</h2>
+    <p class="desc">Border tipis, focus state pakai warna brand — bukan glow biru bawaan browser.</p>
+    <div class="form-demo">
+      <div class="field">
+        <label>Nama perusahaan</label>
+        <input type="text" placeholder="PT Contoh Pakan Sejahtera">
+      </div>
+      <div class="field">
+        <label>Nomor WhatsApp</label>
+        <input type="text" placeholder="08xx-xxxx-xxxx">
+        <div class="helper">Tim sales akan menghubungi melalui nomor ini</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFEST ROWS -->
+  <section class="block">
+    <h2>Daftar produk — gaya "manifest"</h2>
+    <p class="desc">Pengganti grid kartu: baris data rata kiri, mirip packing list gudang. Radius 0, dipisah garis tipis.</p>
+    <div class="manifest-list">
+      <div class="m-head">
+        <span>Produk</span><span>Grade</span><span>Kemasan</span><span></span>
+      </div>
+      <div class="m-row">
+        <div class="name">Zeolit pakan</div>
+        <div><span class="field-label">Grade</span><span class="field-value">Feed grade</span></div>
+        <div><span class="field-label">Kemasan</span><span class="field-value">20 kg HDPE</span></div>
+        <div class="action"><button class="btn btn-tertiary">Detail</button></div>
+      </div>
+      <div class="m-row">
+        <div class="name">Bentonit sodium</div>
+        <div><span class="field-label">Grade</span><span class="field-value">Grade 1</span></div>
+        <div><span class="field-label">Kemasan</span><span class="field-value">Curah / bag</span></div>
+        <div class="action"><button class="btn btn-tertiary">Detail</button></div>
+      </div>
+      <div class="m-row">
+        <div class="name">HSCAS toxin binder</div>
+        <div><span class="field-label">Grade</span><span class="field-value">Feed grade</span></div>
+        <div><span class="field-label">Kemasan</span><span class="field-value">25 kg HDPE</span></div>
+        <div class="action"><button class="btn btn-tertiary">Detail</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACING & RADIUS -->
+  <section class="block">
+    <h2>Spacing &amp; radius</h2>
+    <p class="desc">Skala 4px. Radius dibedakan sesuai peran elemen — bukan satu nilai untuk semua.</p>
+    <div style="margin-bottom: var(--space-6);">
+      <div class="scale-row"><span class="scale-label">4px</span><div class="scale-bar" style="width:4px"></div></div>
+      <div class="scale-row"><span class="scale-label">8px</span><div class="scale-bar" style="width:8px"></div></div>
+      <div class="scale-row"><span class="scale-label">16px</span><div class="scale-bar" style="width:16px"></div></div>
+      <div class="scale-row"><span class="scale-label">24px</span><div class="scale-bar" style="width:24px"></div></div>
+      <div class="scale-row"><span class="scale-label">32px</span><div class="scale-bar" style="width:32px"></div></div>
+      <div class="scale-row"><span class="scale-label">48px</span><div class="scale-bar" style="width:48px"></div></div>
+      <div class="scale-row"><span class="scale-label">64px</span><div class="scale-bar" style="width:64px"></div></div>
+    </div>
+    <div class="radius-demo">
+      <div class="radius-box" style="border-radius:0px">0px — tabel</div>
+      <div class="radius-box" style="border-radius:2px">2px — tombol</div>
+      <div class="radius-box" style="border-radius:4px">4px — panel</div>
+      <div class="radius-box" style="border-radius:999px">full — FAB</div>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <section class="block">
+    <h2>Tombol WhatsApp mengambang</h2>
+    <p class="desc">Pengecualian disengaja dari palet brand — tetap pakai hijau WhatsApp resmi demi pengenalan instan.</p>
+    <div class="fab-demo">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.09.81.82-3.01-.2-.32A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+    </div>
+  </section>
+
+  <!-- DO / DONT -->
+  <section class="block" style="border-bottom:none;">
+    <h2>Yang disengaja dihindari</h2>
+    <div class="dodont">
+      <div>
+        <h3 style="color:var(--color-pasture-green)">Lakukan</h3>
+        <ul>
+          <li>Rata kiri untuk konten teknis/spesifikasi</li>
+          <li>Radius berbeda sesuai peran elemen</li>
+          <li>Garis tipis untuk pemisah, bukan shadow</li>
+          <li>Sentence case untuk semua label &amp; judul</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:var(--color-danger, #A6432E)">Hindari</h3>
+        <ul>
+          <li>Label ALL-CAPS di atas heading</li>
+          <li>Tombol dengan tanda panah "→" di akhir teks</li>
+          <li>Radius seragam di semua elemen</li>
+          <li>Shadow abu-abu lembut di setiap kartu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="credits">
+    Design System v1.0 — PT Anchor Pakan Jaya · Zilla Slab &amp; Public Sans via Google Fonts
+  </footer>
+
+</div>
+
+</body>
+</html>

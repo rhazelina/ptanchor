@@ -1,0 +1,19 @@
+[
+  {
+    "date": "2026-09-03",
+    "scope": "app",
+    "brief": "PT Anchor Pakan Jaya · company-profile & product-catalog prototype (6 routes)",
+    "genre": "editorial",
+    "design-system": "design.md",
+    "macrostructure": "Manifest Ledger / Spec Sheet (catalogue-led documental family)",
+    "theme": "studied-DNA (client 'Steel and Grain' tokens)",
+    "enrichment": "Tier-B reuse (client anchor-logo.svg watermark)",
+    "nav": "N6 masthead (reference-strip)",
+    "footer": "Ft4 dense colophon",
+    "knobs": "routes: Beranda (Manifest Ledger hero) · Katalog/DetailProduk (Ledger rows) · Tentang/Sertifikasi (Spec Sheet) · Kontak (Form-sheet)",
+    "motion": "hover-only, color/border transitions 120ms; reduced-motion honored",
+    "slop": "58/58 (gates 20, 24, 26, 34, 48, 49, 50, 51, 54 fixed during sweep; verified no scroll 320–1920, no two-line CTA)",
+    "contrast": "pass (40–41)",
+    "stamp": "/home/fichela/Projects/Prototype/Ptanchor/src/index.css"
+  }
+]

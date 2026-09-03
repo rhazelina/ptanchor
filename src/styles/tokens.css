@@ -1,0 +1,173 @@
+/* ==========================================================================
+   PT Anchor Pakan Jaya — Design Tokens
+   "Steel and Grain" design system
+
+   Cara pakai:
+   1. Taruh file ini di src/styles/tokens.css
+   2. Import sekali di src/main.jsx:
+        import './styles/tokens.css'
+   3. Pastikan font Zilla Slab & Public Sans sudah dimuat
+      (lihat design-system.md bagian "Instalasi Font di Vite")
+   ========================================================================== */
+
+:root {
+  /* ---- Brand colors (6 warna inti) ---- */
+  --color-anchor-navy: #1C3A4B;
+  --color-anchor-navy-dark: #122733;
+  --color-anchor-navy-light: #2E5266;
+
+  --color-grain-gold: #C89A3E;
+  --color-grain-gold-dark: #A47D2E;
+  --color-grain-gold-light: #E0B968;
+
+  --color-pasture-green: #4B6B4E;
+  --color-pasture-green-dark: #38513A;
+  --color-pasture-green-light: #6C8F6F;
+
+  --color-limestone: #E7E7DF;
+  --color-limestone-dark: #D8D8CC;
+
+  --color-slate: #83807A;
+  --color-slate-light: #ABA8A1;
+
+  --color-ink: #1F2421;
+
+  /* ---- Extended neutrals ---- */
+  --color-paper: #FBFBF8;
+  --color-white: #FFFFFF;
+
+  /* ---- Utility (bukan bagian palet brand, dipakai terbatas) ---- */
+  --color-whatsapp: #25D366; /* pengecualian disengaja: ikon WA pakai warna resminya */
+  --color-danger: #A6432E;
+
+  /* ---- Semantic tokens (pakai ini di komponen, bukan raw color) ---- */
+  --color-bg: var(--color-paper);
+  --color-bg-alt: var(--color-limestone);
+  --color-surface: var(--color-white);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-slate);
+  --color-text-on-dark: var(--color-white);
+  --color-border: var(--color-limestone-dark);
+  --color-border-strong: var(--color-anchor-navy);
+
+  --color-primary: var(--color-anchor-navy);
+  --color-primary-hover: var(--color-anchor-navy-dark);
+  --color-primary-text: var(--color-white);
+
+  --color-accent: var(--color-grain-gold);
+  --color-accent-hover: var(--color-grain-gold-dark);
+
+  --color-tag-bg: var(--color-pasture-green);
+  --color-tag-text: var(--color-white);
+
+  --color-success: var(--color-pasture-green);
+
+  /* ---- Typography ---- */
+  --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  --fs-display-xl: 3.5rem;   /* 56px */
+  --fs-h1: 2.5rem;           /* 40px */
+  --fs-h2: 2rem;             /* 32px */
+  --fs-h3: 1.5rem;           /* 24px */
+  --fs-h4: 1.25rem;          /* 20px */
+  --fs-body-lg: 1.125rem;    /* 18px */
+  --fs-body: 1rem;           /* 16px */
+  --fs-small: 0.875rem;      /* 14px */
+  --fs-micro: 0.8125rem;     /* 13px */
+
+  --lh-display: 1.1;
+  --lh-heading: 1.2;
+  --lh-heading-loose: 1.3;
+  --lh-body: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --measure: 68ch; /* lebar baca maksimal untuk paragraf */
+
+  /* ---- Spacing scale (basis 4px) ---- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-9: 6rem;     /* 96px */
+
+  /* ---- Radius (dibedakan sesuai hierarki elemen, lihat design-system.md) ---- */
+  --radius-sharp: 0px;    /* baris tabel/manifest, divider */
+  --radius-sm: 2px;       /* tombol, input, tag */
+  --radius-md: 4px;       /* panel/card besar */
+  --radius-full: 999px;   /* hanya tombol aksi mengambang */
+
+  /* ---- Elevation (dipakai terbatas, hanya elemen melayang) ---- */
+  --shadow-float: 0 6px 20px rgba(28, 58, 75, 0.25);
+  --shadow-none: none;
+
+  /* ---- Border ---- */
+  --border-hairline: 1px solid var(--color-border);
+  --border-strong: 1.5px solid var(--color-border-strong);
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-padding-mobile: var(--space-5);
+  --container-padding-desktop: var(--space-8);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-standard: 200ms;
+}
+
+/* ==========================================================================
+   Base reset ringan — sesuaikan dengan kebutuhan proyek
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--space-4);
+  font-weight: var(--fw-semibold);
+}
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  margin: 0 0 var(--space-3);
+}
+
+p {
+  max-width: var(--measure);
+  margin: 0 0 var(--space-4);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
