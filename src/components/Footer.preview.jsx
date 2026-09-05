@@ -15,7 +15,7 @@ export default function FooterPreview() {
           Footer Component — 8-State Inspection
         </h1>
         <p className="text-sm text-slate">
-          Visual verification wrapper for PT Anchor Pakan Jaya spec-sheet footer.
+          Visual verification wrapper for Henan Anchor Biotechnology Co., Ltd. spec-sheet footer.
         </p>
       </header>
 
@@ -61,11 +61,11 @@ export default function FooterPreview() {
         <div className="border border-limestone-dark/60 rounded-sm overflow-hidden shadow-xs">
           <Footer
             navItems={[
-              { href: '#/', label: 'Beranda', code: '00' },
-              { href: '#/produk', label: 'Katalog produk', code: '01' },
-              { href: '#/tentang', label: 'Tentang kami', code: '02' },
-              { href: '#/sertifikasi', label: 'Sertifikasi', code: '03' },
-              { href: '#/kontak', label: 'Kontak', code: '04' },
+              { href: '#/', label: 'Home', code: '00' },
+              { href: '#/products', label: 'Product catalog', code: '01' },
+              { href: '#/about', label: 'About us', code: '02' },
+              { href: '#/certifications', label: 'Certifications', code: '03' },
+              { href: '#/contact', label: 'Contact', code: '04' },
             ]}
           />
         </div>

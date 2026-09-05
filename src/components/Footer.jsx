@@ -8,11 +8,11 @@ import AnchorLogo from './AnchorLogo.jsx'
 import { waLink, ADDRESS, PHONE_DISPLAY, EMAIL } from '../data/products.js'
 
 const NAV_ITEMS = [
-  { href: '#/', label: 'Beranda', code: '00' },
-  { href: '#/produk', label: 'Katalog produk', code: '01' },
-  { href: '#/tentang', label: 'Tentang kami', code: '02' },
-  { href: '#/sertifikasi', label: 'Sertifikasi', code: '03' },
-  { href: '#/kontak', label: 'Kontak', code: '04' },
+  { href: '#/', label: 'Home', code: '00' },
+  { href: '#/products', label: 'Product catalog', code: '01' },
+  { href: '#/about', label: 'About us', code: '02' },
+  { href: '#/certifications', label: 'Certifications', code: '03' },
+  { href: '#/contact', label: 'Contact', code: '04' },
 ]
 
 export default function Footer({
@@ -37,7 +37,7 @@ export default function Footer({
           <div className="space-y-4 max-w-2xl">
             <a
               href="#/"
-              aria-label="PT Anchor Pakan Jaya Beranda"
+              aria-label="Henan Anchor Biotechnology Co., Ltd. Home"
               className="inline-flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold focus-visible:ring-offset-2 focus-visible:ring-offset-anchor-navy rounded-sm"
             >
               <span className="inline-flex items-center justify-center bg-white rounded-sm p-1.5 transition-transform duration-fast group-hover:scale-105">
@@ -45,16 +45,16 @@ export default function Footer({
               </span>
               <div className="flex flex-col">
                 <span className="font-display font-semibold text-[22px] tracking-tight text-white group-hover:text-grain-gold transition-colors">
-                  PT Anchor Pakan Jaya
+                  Henan Anchor Biotechnology Co., Ltd.
                 </span>
                 <span className="font-mono text-[11px] text-slate-light font-medium uppercase tracking-widest">
-                  EST. 1998 · SURABAYA / CIKARANG
+                  EST. 2014 · ZHENGZHOU, HENAN, CHINA
                 </span>
               </div>
             </a>
 
             <p className="text-[14px] text-limestone leading-relaxed font-normal max-w-[56ch]">
-              Pemasok utama bahan baku &amp; aditif pakan ternak berkualitas tinggi untuk industri feed mill, integrator, dan peternak profesional di seluruh Indonesia.
+              A leading supplier of high-quality feed raw materials &amp; additives for the feed mill industry, integrators, and professional livestock producers worldwide.
             </p>
           </div>
 
@@ -62,16 +62,16 @@ export default function Footer({
           <div className="shrink-0 bg-anchor-navy-dark border border-white/20 rounded-sm p-4 w-full sm:w-auto">
             <div className="text-[11px] font-mono text-grain-gold uppercase tracking-wider mb-2 flex items-center gap-1.5 font-medium">
               <ShieldCheck size={13} className="text-grain-gold" />
-              <span>SALURAN RESMI</span>
+              <span>OFFICIAL CHANNEL</span>
             </div>
             <a
-              href={disabled ? undefined : waLink('Halo PT Anchor Pakan Jaya, saya ingin berkonsultasi mengenai produk.')}
+              href={disabled ? undefined : waLink('Hello Henan Anchor Biotechnology Co., Ltd., I would like to consult about products.')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-whatsapp text-white text-[13px] font-semibold px-4 py-2.5 rounded-sm hover:bg-[#1ebe5d] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold focus-visible:ring-offset-2 focus-visible:ring-offset-anchor-navy min-h-[44px] w-full sm:w-auto"
             >
               <MessageCircle size={16} />
-              <span>Konsultasi Sales WhatsApp</span>
+              <span>Consult Sales on WhatsApp</span>
               <ArrowUpRight size={14} className="opacity-90" />
             </a>
           </div>
@@ -80,21 +80,21 @@ export default function Footer({
         <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-8 lg:gap-12 py-10 border-b border-white/15">
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span>KANTOR &amp; GUDANG PUSAT</span>
+              <span>HEAD OFFICE &amp; MAIN WAREHOUSE</span>
             </h2>
             <div className="flex gap-3 text-[13px] text-limestone leading-relaxed">
               <MapPin size={16} className="shrink-0 text-grain-gold mt-0.5" />
               <span>{ADDRESS}</span>
             </div>
             <div className="pt-2 text-[12px] text-slate-light font-mono space-y-1">
-              <p>JAM OPERASIONAL: SENIN–JUMAT 08.00–17.00 WIB</p>
-              <p>INSPEKSI FISIK &amp; SAMPLE TESTING TERSEDIA VIA PERMOHONAN</p>
+              <p>OPERATING HOURS: MON–FRI 08:00–17:00 CST</p>
+              <p>PHYSICAL INSPECTION &amp; SAMPLE TESTING AVAILABLE ON REQUEST</p>
             </div>
           </div>
 
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span>KONTAK SPESIFIKASI</span>
+              <span>SPECIFICATION CONTACT</span>
             </h2>
             <ul className="space-y-2.5 text-[13px] w-full min-w-0">
               <li className="w-full min-w-0">
@@ -132,7 +132,7 @@ export default function Footer({
                     <MessageCircle size={14} />
                   </span>
                   <span className="text-[13px] text-limestone group-hover:text-white group-hover:underline flex-1 min-w-0">
-                    WhatsApp Layanan Pelanggan
+                    WhatsApp Customer Service
                   </span>
                 </a>
               </li>
@@ -141,9 +141,9 @@ export default function Footer({
 
           <div className="min-w-0 flex flex-col space-y-4 items-start justify-start">
             <h2 className="text-[11px] font-mono font-semibold text-grain-gold uppercase tracking-widest flex items-center gap-2 h-5 leading-none">
-              <span>INDEX DOKUMEN</span>
+              <span>DOCUMENT INDEX</span>
             </h2>
-            <nav aria-label="Navigasi Footer" className="w-full min-w-0">
+            <nav aria-label="Footer Navigation" className="w-full min-w-0">
               <ul className="space-y-1.5 text-[13px] w-full min-w-0">
                 {navItems.map((item) => (
                   <li key={item.href} className="w-full min-w-0">
@@ -171,11 +171,11 @@ export default function Footer({
         {/* Section 3: Bottom Colophon & Compliance Footnote */}
         <div className="pt-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[11px] font-mono text-slate-light">
           <div>
-            <span>© {currentYear} PT ANCHOR PAKAN JAYA. ALL RIGHTS RESERVED.</span>
+            <span>© {currentYear} HENAN ANCHOR BIOTECHNOLOGY CO., LTD. ALL RIGHTS RESERVED.</span>
           </div>
 
           {/* <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-light">
-            <span>PREMIX &amp; ADITIF</span>
+            <span>PREMIX &amp; FEED ADDITIVES</span>
             <span className="text-grain-gold">·</span>
             <span>ACIDIFIER &amp; BINDER</span>
             <span className="text-grain-gold">·</span>

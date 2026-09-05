@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import WhatsAppFloat from './components/WhatsAppFloat.jsx'
-import Beranda from './pages/Beranda.jsx'
-import Katalog from './pages/Katalog.jsx'
-import DetailProduk from './pages/DetailProduk.jsx'
-import Tentang from './pages/Tentang.jsx'
-import Sertifikasi from './pages/Sertifikasi.jsx'
-import Kontak from './pages/Kontak.jsx'
+import Home from './pages/Home.jsx'
+import Catalog from './pages/Catalog.jsx'
+import ProductDetail from './pages/ProductDetail.jsx'
+import About from './pages/About.jsx'
+import Certifications from './pages/Certifications.jsx'
+import Contact from './pages/Contact.jsx'
 
 function parseHash(hash) {
   const path = (hash || '').replace(/^#/, '').replace(/^\//, '')
@@ -37,27 +37,27 @@ function App() {
 
   let page
   if (segments.length === 0) {
-    page = <Beranda />
-  } else if (segments[0] === 'produk') {
+    page = <Home />
+  } else if (segments[0] === 'products') {
     if (segments[1]) {
-      page = <DetailProduk slug={segments[1]} />
+      page = <ProductDetail slug={segments[1]} />
     } else {
       page = (
-        <Katalog
-          key={`${params.get('kategori') || ''}:${params.get('ternak') || ''}`}
-          initialCategory={params.get('kategori') || ''}
-          initialAnimal={params.get('ternak') || ''}
+        <Catalog
+          key={`${params.get('category') || ''}:${params.get('animal') || ''}`}
+          initialCategory={params.get('category') || ''}
+          initialAnimal={params.get('animal') || ''}
         />
       )
     }
-  } else if (segments[0] === 'tentang') {
-    page = <Tentang />
-  } else if (segments[0] === 'sertifikasi') {
-    page = <Sertifikasi />
-  } else if (segments[0] === 'kontak') {
-    page = <Kontak />
+  } else if (segments[0] === 'about') {
+    page = <About />
+  } else if (segments[0] === 'certifications') {
+    page = <Certifications />
+  } else if (segments[0] === 'contact') {
+    page = <Contact />
   } else {
-    page = <Beranda />
+    page = <Home />
   }
 
   return (

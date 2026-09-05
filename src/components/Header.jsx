@@ -10,10 +10,10 @@ import Button from './Button.jsx'
 import { waLink } from '../data/products.js'
 
 const NAV_ITEMS = [
-  { href: '#/produk', label: 'Produk', code: '01' },
-  { href: '#/tentang', label: 'Tentang kami', code: '02' },
-  { href: '#/sertifikasi', label: 'Sertifikasi', code: '03' },
-  { href: '#/kontak', label: 'Kontak', code: '04' },
+  { href: '#/products', label: 'Products', code: '01' },
+  { href: '#/about', label: 'About us', code: '02' },
+  { href: '#/certifications', label: 'Certifications', code: '03' },
+  { href: '#/contact', label: 'Contact', code: '04' },
 ]
 
 export default function Header({
@@ -49,23 +49,23 @@ export default function Header({
         <div className="mx-auto max-w-[1200px] flex items-center justify-between font-mono">
           <div className="flex items-center gap-3">
             <span className="text-anchor-navy font-semibold uppercase tracking-wider">
-              PT Anchor Pakan Jaya
+              Henan Anchor Biotechnology Co., Ltd.
             </span>
             <span className="text-slate-light">│</span>
             <span className="text-slate">REG: SP-998/SUB</span>
             <span className="text-slate-light">│</span>
             <span className="text-slate">ISO 9001:2015 CERTIFIED</span>
             <span className="text-slate-light">│</span>
-            <span className="text-slate">NPWP: 1921012001656000</span>
+            <span className="text-slate">TAX ID: 91410100MA45XKTQ7X</span>
           </div>
 
           <div className="flex items-center gap-4 text-[11px]">
             <a
-              href="tel:+62315550192"
+              href="tel:+863715550192"
               className="inline-flex items-center gap-1 text-slate hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-grain-gold"
             >
               <Phone size={11} className="text-slate" />
-              <span>(031) 555-0192</span>
+              <span>+86 371-555-0192</span>
             </a>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Header({
           {/* Brand Logo & Wordmark */}
           <a
             href="#/"
-            aria-label="PT Anchor Pakan Jaya Beranda"
+            aria-label="Henan Anchor Biotechnology Co., Ltd. Home"
             className="flex items-center gap-3 font-display font-semibold text-[19px] leading-none text-anchor-navy shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold focus-visible:ring-offset-2 rounded-sm group"
           >
             <div className="p-1 rounded-sm group-hover:bg-limestone transition-colors duration-fast">
@@ -85,17 +85,17 @@ export default function Header({
             </div>
             <div className="flex flex-col">
               <span className="tracking-tight text-anchor-navy group-hover:text-anchor-navy-dark">
-                Anchor Pakan Jaya
+                Henan Anchor Biotechnology
               </span>
               <span className="font-body text-[10px] uppercase font-medium tracking-widest text-slate-light">
-                B2B Raw Materials
+                B2B Feed Raw Materials
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
           <nav
-            aria-label="Navigasi Utama"
+            aria-label="Main Navigation"
             className={`hidden md:flex items-center self-stretch gap-1 text-[14px] font-body ${disabled ? 'pointer-events-none opacity-50' : ''
               }`}
           >
@@ -137,7 +137,7 @@ export default function Header({
               href={
                 disabled
                   ? undefined
-                  : waLink('Halo PT Anchor Pakan Jaya, saya ingin berkonsultasi mengenai spesifikasi pakan.')
+                  : waLink('Hello Henan Anchor Biotechnology Co., Ltd., I would like to consult about feed specifications.')
               }
               className="text-[13px] py-2 px-4 shadow-none border border-whatsapp/20"
             >
@@ -146,7 +146,7 @@ export default function Header({
               ) : (
                 <MessageCircle size={15} />
               )}
-              <span>Hubungi Sales</span>
+              <span>Contact Sales</span>
             </Button>
           </div>
 
@@ -156,7 +156,7 @@ export default function Header({
             disabled={disabled}
             className="md:hidden flex items-center justify-center h-10 w-10 min-h-[44px] min-w-[44px] -mr-1 text-anchor-navy bg-paper hover:bg-limestone border border-limestone-dark/80 rounded-xs transition-all duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grain-gold active:scale-95"
             onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label={mobileOpen ? 'Tutup menu' : 'Buka menu'}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={20} className="text-anchor-navy" /> : <Menu size={20} className="text-anchor-navy" />}
@@ -167,7 +167,7 @@ export default function Header({
       {/* Mobile Drawer Navigation */}
       {mobileOpen && (
         <nav
-          aria-label="Navigasi Seluler"
+          aria-label="Mobile Navigation"
           className="md:hidden border-t border-limestone-dark bg-paper animate-fadeIn shadow-md"
         >
           <div className="mx-auto max-w-[1200px] px-5 py-4 flex flex-col gap-2">
@@ -206,15 +206,15 @@ export default function Header({
               <Button
                 as="a"
                 variant="whatsapp"
-                href={waLink('Halo PT Anchor Pakan Jaya, saya ingin berkonsultasi mengenai produk.')}
+                href={waLink('Hello Henan Anchor Biotechnology Co., Ltd., I would like to consult about products.')}
                 className="w-full justify-center py-3 shadow-none border border-whatsapp/20"
               >
                 <MessageCircle size={16} />
-                <span>Hubungi Sales WhatsApp</span>
+                <span>Contact Sales on WhatsApp</span>
               </Button>
 
               <div className="flex items-center justify-between px-2 pt-1 font-mono text-[10px] text-slate-light">
-                <span>(031) 555-0192</span>
+                <span>+86 371-555-0192</span>
                 <span>ISO 9001:2015 CERTIFIED</span>
               </div>
             </div>
@@ -224,4 +224,3 @@ export default function Header({
     </header>
   )
 }
-

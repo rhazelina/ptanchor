@@ -15,7 +15,7 @@ export default function HeaderPreview() {
           Header Component — 8-State Inspection
         </h1>
         <p className="text-sm text-slate">
-          Visual verification wrapper for PT Anchor Pakan Jaya spec-sheet navigation bar.
+          Visual verification wrapper for Henan Anchor Biotechnology Co., Ltd. spec-sheet navigation bar.
         </p>
       </header>
 
@@ -23,7 +23,7 @@ export default function HeaderPreview() {
       <section className="space-y-2">
         <div className="flex items-center justify-between text-xs font-mono text-slate">
           <span className="font-semibold text-anchor-navy">1. Default State</span>
-          <span>href: #/produk</span>
+          <span>href: #/products</span>
         </div>
         <div className="border border-limestone-dark/60 rounded-sm overflow-hidden bg-white shadow-xs">
           <Header />
@@ -55,16 +55,16 @@ export default function HeaderPreview() {
       {/* 4. Active Route State */}
       <section className="space-y-2">
         <div className="flex items-center justify-between text-xs font-mono text-slate">
-          <span className="font-semibold text-anchor-navy">4. Active Route (Tentang Kami)</span>
-          <span>href: #/tentang</span>
+          <span className="font-semibold text-anchor-navy">4. Active Route (About Us)</span>
+          <span>href: #/about</span>
         </div>
         <div className="border border-limestone-dark/60 rounded-sm overflow-hidden bg-white shadow-xs">
           <Header
             navItems={[
-              { href: '#/produk', label: 'Produk', code: '01' },
-              { href: '#/tentang', label: 'Tentang kami', code: '02' },
-              { href: '#/sertifikasi', label: 'Sertifikasi', code: '03' },
-              { href: '#/kontak', label: 'Kontak', code: '04' },
+              { href: '#/products', label: 'Products', code: '01' },
+              { href: '#/about', label: 'About us', code: '02' },
+              { href: '#/certifications', label: 'Certifications', code: '03' },
+              { href: '#/contact', label: 'Contact', code: '04' },
             ]}
           />
         </div>

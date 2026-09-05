@@ -1,7 +1,7 @@
-export const WA_NUMBER = '6281234567890'
-export const PHONE_DISPLAY = '+62 812-3456-7890'
-export const EMAIL = 'sales@anchorpakanjaya.co.id'
-export const ADDRESS = 'Kawasan Industri Cikarang, Jl. Raya Industri Blok B-12, Cikarang Selatan, Bekasi, Jawa Barat 17530'
+export const WA_NUMBER = '861234567890'
+export const PHONE_DISPLAY = '+86 371-555-0192'
+export const EMAIL = 'sales@henananchor.com'
+export const ADDRESS = 'No. 88 Industrial Road, Zhengzhou Hi-Tech Development Zone, Zhengzhou, Henan 450000, China'
 
 export function waLink(message = '') {
   const base = `https://wa.me/${WA_NUMBER}`
@@ -15,202 +15,201 @@ export const CATEGORIES = [
   { id: 'premix', name: 'Premix' },
 ]
 
-export const ANIMAL_TAGS = ['Unggas', 'Ruminansia', 'Aquaculture', 'Babi']
+export const ANIMAL_TAGS = ['Poultry', 'Ruminants', 'Aquaculture', 'Swine']
 
 export const SECTORS = [
-  { id: 'Unggas', name: 'Unggas', desc: 'Ayam petelur, broiler, & unggas air', image: '/images/sector_poultry.jpg' },
-  { id: 'Ruminansia', name: 'Ruminansia', desc: 'Sapi potong, sapi perah, & kambing', image: '/images/sector_ruminant.jpg' },
-  { id: 'Aquaculture', name: 'Aquaculture', desc: 'Budidaya pakan ikan & udang', image: '/images/sector_aquaculture.jpg' },
-  { id: 'Babi', name: 'Babi', desc: 'Pakan babi starter, grower, & finisher', image: '/images/sector_swine.jpg' },
+  { id: 'Poultry', name: 'Poultry', desc: 'Layers, broilers, & waterfowl feed', image: '/images/sector_poultry.jpg' },
+  { id: 'Ruminants', name: 'Ruminants', desc: 'Beef cattle, dairy cattle, & goats', image: '/images/sector_ruminant.jpg' },
+  { id: 'Aquaculture', name: 'Aquaculture', desc: 'Fish & shrimp feed formulation', image: '/images/sector_aquaculture.jpg' },
+  { id: 'Swine', name: 'Swine', desc: 'Swine starter, grower, & finisher feed', image: '/images/sector_swine.jpg' },
 ]
 
 export const CERTIFICATIONS = [
-  { name: 'ISO 9001:2015', scope: 'Sistem manajemen mutu pengolahan & pengadaan', badge: '/images/cert_iso.svg' },
-  { name: 'GMP+ B2', scope: 'Standar internasional keselamatan pakan ternak', badge: '/images/cert_gmp.svg' },
-  { name: 'Sertifikat Halal', scope: 'Jaminan kehalalan bahan baku pakan LPPOM MUI', badge: '/images/cert_halal.svg' },
-  { name: 'SNI Standards', scope: 'Sesuai Standar Nasional Indonesia', badge: '/images/cert_sni.svg' },
+  { name: 'ISO 9001:2015', scope: 'Quality management system for feed processing & procurement', badge: '/images/cert_iso.svg' },
+  { name: 'GMP+ B2', scope: 'International feed safety standard', badge: '/images/cert_gmp.svg' },
+  { name: 'Halal', scope: 'Halal-certified feed raw materials', badge: '/images/cert_halal.svg' },
 ]
 
 export const PRODUCTS = [
   {
-    slug: 'zeolit-pakan',
-    name: 'Zeolit pakan',
+    slug: 'zeolite-feed',
+    name: 'Feed Zeolite',
     category: 'mineral',
-    tags: ['Unggas', 'Ruminansia', 'Aquaculture'],
+    tags: ['Poultry', 'Ruminants', 'Aquaculture'],
     grade: 'Feed grade',
-    kemasan: '20 kg HDPE',
-    ketersediaan: 'Stok tersedia',
+    packaging: '20 kg HDPE',
+    availability: 'In stock',
     image: '/images/product_zeolit.jpg',
-    ringkas:
-      'Mineral zeolit yang membantu menyerap amonia dan toksin, meningkatkan daya cerna pakan.',
-    deskripsi:
-      'Zeolit pakan grade A adalah mineral aluminosilikat alami yang diproses untuk aplikasi pakan ternak. Berfungsi sebagai pengikat amonia di saluran pencernaan, mengurangi kadar air lendir, serta membantu stabilitas pakan pelet. Cocok untuk pakan unggas petelur, broiler, dan ruminansia.',
-    spesifikasi: [
+    summary:
+      'Natural zeolite mineral that binds ammonia and toxins, improving feed digestibility.',
+    description:
+      'Grade A feed zeolite is a natural aluminosilicate mineral processed for livestock feed applications. It binds ammonia in the digestive tract, reduces moisture in the gut, and helps stabilize pellet feed. Suitable for layer, broiler, and ruminant feed.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'Zeolit 90% min., SiO₂ 65–70%' },
-      { label: 'Kemasan', value: '20 kg HDPE' },
-      { label: 'Kadar air', value: 'Maks. 8%' },
-      { label: 'Ukuran partikel', value: 'Mesh 60–100' },
+      { label: 'Composition', value: 'Zeolite 90% min., SiO₂ 65–70%' },
+      { label: 'Packaging', value: '20 kg HDPE' },
+      { label: 'Moisture', value: 'Max 8%' },
+      { label: 'Particle size', value: 'Mesh 60–100' },
     ],
   },
   {
-    slug: 'bentonit-sodium',
-    name: 'Bentonit sodium',
+    slug: 'sodium-bentonite',
+    name: 'Sodium Bentonite',
     category: 'mineral',
-    tags: ['Unggas', 'Ruminansia'],
+    tags: ['Poultry', 'Ruminants'],
     grade: 'Grade 1',
-    kemasan: 'Curah / bag',
-    ketersediaan: 'Stok tersedia',
+    packaging: 'Bulk / bag',
+    availability: 'In stock',
     image: '/images/product_bentonit.jpg',
-    ringkas:
-      'Bentonit sodium sebagai pengikat pelet dan penyerap toksin, tersedia curah maupun bag.',
-    deskripsi:
-      'Bentonit sodium berfungsi ganda sebagai binding agent dalam pembuatan pelet sekaligus penyerap mikotoksin dan kontaminan ringan. Sering dipakai untuk meningkatkan kualitas fisik pelet dan kelancaran proses granulasi di feed mill.',
-    spesifikasi: [
+    summary:
+      'Sodium bentonite as a pellet binder and toxin adsorbent, available bulk or bagged.',
+    description:
+      'Sodium bentonite serves a dual function as a binding agent in pellet production and an adsorbent of mycotoxins and light contaminants. Commonly used to improve physical pellet quality and the flow of granulation in feed mills.',
+    specifications: [
       { label: 'Grade', value: 'Grade 1' },
-      { label: 'Kandungan', value: 'Montmorillonit 85% min.' },
-      { label: 'Kemasan', value: 'Curah / karung 50 kg' },
-      { label: 'Kadar air', value: 'Maks. 12%' },
-      { label: 'Curah massa', value: '0.8–1.0 g/ml' },
+      { label: 'Composition', value: 'Montmorillonite 85% min.' },
+      { label: 'Packaging', value: 'Bulk / 50 kg bags' },
+      { label: 'Moisture', value: 'Max 12%' },
+      { label: 'Bulk density', value: '0.8–1.0 g/ml' },
     ],
   },
   {
     slug: 'hscas-toxin-binder',
-    name: 'HSCAS toxin binder',
+    name: 'HSCAS Toxin Binder',
     category: 'toxin-binder',
-    tags: ['Unggas', 'Ruminansia'],
+    tags: ['Poultry', 'Ruminants'],
     grade: 'Feed grade',
-    kemasan: '25 kg HDPE',
-    ketersediaan: 'Stok terbatas',
+    packaging: '25 kg HDPE',
+    availability: 'Limited stock',
     image: '/images/product_toxin_binder.jpg',
-    ringkas:
-      'Hydrated sodium calcium aluminosilicate (HSCAS) untuk mengikat aflatoksin di pakan.',
-    deskripsi:
-      'HSCAS (hydrated sodium calcium aluminosilicate) adalah toxin binder berbasis aluminosilikat yang efektif mengikat aflatoksin B1 pada saluran pencernaan, sehingga menekan dampak mikotoksin terhadap produktivitas dan kesehatan ternak.',
-    spesifikasi: [
+    summary:
+      'Hydrated sodium calcium aluminosilicate (HSCAS) binder effective against aflatoxin in feed.',
+    description:
+      'HSCAS (hydrated sodium calcium aluminosilicate) is an aluminosilicate-based toxin binder that effectively binds aflatoxin B1 in the digestive tract, reducing the impact of mycotoxins on livestock productivity and health.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'HSCAS feed grade' },
-      { label: 'Kemasan', value: '25 kg HDPE' },
-      { label: 'Kapasitas ikat', value: 'Aflatoksin B1 ≥ 95%' },
-      { label: 'Dosis anjuran', value: '0.1–0.5% dari ransum' },
+      { label: 'Composition', value: 'HSCAS feed grade' },
+      { label: 'Packaging', value: '25 kg HDPE' },
+      { label: 'Binding capacity', value: 'Aflatoxin B1 ≥ 95%' },
+      { label: 'Recommended dosage', value: '0.1–0.5% of the ration' },
     ],
   },
   {
-    slug: 'kalsium-karbonat',
-    name: 'Kalsium karbonat',
+    slug: 'calcium-carbonate',
+    name: 'Calcium Carbonate',
     category: 'mineral',
-    tags: ['Unggas', 'Ruminansia', 'Aquaculture'],
+    tags: ['Poultry', 'Ruminants', 'Aquaculture'],
     grade: 'Feed grade',
-    kemasan: '50 kg PP',
-    ketersediaan: 'Stok tersedia',
+    packaging: '50 kg PP',
+    availability: 'In stock',
     image: '/images/product_kalsium_karbonat.jpg',
-    ringkas: 'Sumber kalsium untuk pakan unggas petelur, layer, dan perairan.',
-    deskripsi:
-      'Kalsium karbonat merupakan sumber kalsium utama untuk pakan layer dan ruminansia. Kadar kalsium tinggi dengan low heavy metal sangat penting untuk kualitas cangkang telur dan pertumbuhan tulang.',
-    spesifikasi: [
+    summary: 'Calcium source for layers, ruminants, and aquaculture feed.',
+    description:
+      'Calcium carbonate is the primary calcium source for layer and ruminant feed. High calcium content with low heavy metals is essential for eggshell quality and bone development.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'CaCO₃ 98% min., Ca 39%' },
-      { label: 'Kemasan', value: '50 kg PP' },
-      { label: 'Ukuran partikel', value: 'Mesh 50–200' },
-      { label: 'Logam berat', value: 'Low, memenuhi SNI' },
+      { label: 'Composition', value: 'CaCO₃ 98% min., Ca 39%' },
+      { label: 'Packaging', value: '50 kg PP' },
+      { label: 'Particle size', value: 'Mesh 50–200' },
+      { label: 'Heavy metals', value: 'Low — meets feed safety standards' },
     ],
   },
   {
-    slug: 'diamonium-fosfat-dcp',
-    name: 'DCP (Dicalcium phosphate)',
+    slug: 'dicalcium-phosphate',
+    name: 'DCP (Dicalcium Phosphate)',
     category: 'mineral',
-    tags: ['Unggas', 'Ruminansia', 'Aquaculture'],
+    tags: ['Poultry', 'Ruminants', 'Aquaculture'],
     grade: 'Feed grade',
-    kemasan: '25 kg HDPE',
-    ketersediaan: 'Stok tersedia',
+    packaging: '25 kg HDPE',
+    availability: 'In stock',
     image: '/images/product_dcp.jpg',
-    ringkas:
-      'Sumber fosfor dan kalsium esensial untuk pertumbuhan tulang ternak dan perairan.',
-    deskripsi:
-      'Dicalcium phosphate menyediakan fosfor dan kalsium yang mudah diserap, penting untuk pembentukan tulang, produksi telur, dan pertumbuhan ikan. Kualitas konsisten dengan kadar fluor rendah.',
-    spesifikasi: [
+    summary:
+      'Essential source of phosphorus and calcium for livestock and aquaculture bone growth.',
+    description:
+      'Dicalcium phosphate provides highly absorbable phosphorus and calcium, important for bone formation, egg production, and fish growth. Consistent quality with low fluoride content.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'P 18% min., Ca 24%' },
-      { label: 'Kemasan', value: '25 kg HDPE' },
-      { label: 'Fluor', value: 'Maks. 0.18%' },
-      { label: 'Bentuk', value: 'Granular halus' },
+      { label: 'Composition', value: 'P 18% min., Ca 24%' },
+      { label: 'Packaging', value: '25 kg HDPE' },
+      { label: 'Fluoride', value: 'Max 0.18%' },
+      { label: 'Form', value: 'Fine granular' },
     ],
   },
   {
-    slug: 'mono-kalsium-fosfat-mcp',
-    name: 'MCP (Mono kalsium fosfat)',
+    slug: 'monocalcium-phosphate',
+    name: 'MCP (Monocalcium Phosphate)',
     category: 'mineral',
-    tags: ['Unggas', 'Ruminansia'],
+    tags: ['Poultry', 'Ruminants'],
     grade: 'Feed grade',
-    kemasan: '25 kg HDPE',
-    ketersediaan: 'Inden / pesanan',
+    packaging: '25 kg HDPE',
+    availability: 'Made to order',
     image: '/images/product_mcp.jpg',
-    ringkas: 'Fosfor mineral dengan bioavailabilitas tinggi untuk pakan unggas.',
-    deskripsi:
-      'Monocalcium phosphate memberikan fosfor dengan bioavailabilitas terbaik di antara sumber fosfor anorganik, sangat efisien untuk pakan unggas dan babi dengan kebutuhan fosfor tinggi.',
-    spesifikasi: [
+    summary: 'Phosphorus mineral with high bioavailability for poultry feed.',
+    description:
+      'Monocalcium phosphate provides phosphorus with the best bioavailability among inorganic phosphorus sources, highly efficient for poultry and swine feed with high phosphorus requirements.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'P 22% min., Ca 15%' },
-      { label: 'Kemasan', value: '25 kg HDPE' },
-      { label: 'Ketersediaan', value: 'Inden mingguan' },
+      { label: 'Composition', value: 'P 22% min., Ca 15%' },
+      { label: 'Packaging', value: '25 kg HDPE' },
+      { label: 'Availability', value: 'Weekly order' },
     ],
   },
   {
-    slug: 'garam-iodisasi-pakan',
-    name: 'Garam iodisasi pakan',
+    slug: 'iodized-feed-salt',
+    name: 'Iodized Feed Salt',
     category: 'premix',
-    tags: ['Unggas', 'Ruminansia', 'Aquaculture'],
+    tags: ['Poultry', 'Ruminants', 'Aquaculture'],
     grade: 'Feed grade',
-    kemasan: '25 kg PP',
-    ketersediaan: 'Stok tersedia',
+    packaging: '25 kg PP',
+    availability: 'In stock',
     image: '/images/product_salt.jpg',
-    ringkas: 'Sumber natrium dan iodium untuk keseimbangan elektrolit pakan.',
-    deskripsi:
-      'Garam iodisasi pakan menyediakan natrium dan iodium untuk keseimbangan elektrolit dan fungsi tiroid ternak, serta merangsang nafsu makan. Umum dipakai sebagai karier premix.',
-    spesifikasi: [
+    summary: 'Source of sodium and iodine for electrolyte balance in feed.',
+    description:
+      'Iodized feed salt provides sodium and iodine for electrolyte balance and thyroid function in livestock, and stimulates appetite. Commonly used as a premix carrier.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade' },
-      { label: 'Kandungan', value: 'NaCl 99% min., I₂ 50 ppm' },
-      { label: 'Kemasan', value: '25 kg PP' },
-      { label: 'Bentuk', value: 'Kristal halus kering' },
+      { label: 'Composition', value: 'NaCl 99% min., I₂ 50 ppm' },
+      { label: 'Packaging', value: '25 kg PP' },
+      { label: 'Form', value: 'Fine dry crystals' },
     ],
   },
   {
-    slug: 'premix-vitamin-mineral',
-    name: 'Premix vitamin mineral',
+    slug: 'vitamin-mineral-premix',
+    name: 'Vitamin Mineral Premix',
     category: 'premix',
-    tags: ['Unggas', 'Ruminansia'],
+    tags: ['Poultry', 'Ruminants'],
     grade: 'Custom formula',
-    kemasan: '20 kg HDPE',
-    ketersediaan: 'Inden / pesanan',
+    packaging: '20 kg HDPE',
+    availability: 'Made to order',
     image: '/images/product_premix.jpg',
-    ringkas: 'Premix vitamin-mineral sesuai formula kebutuhan ternak anda.',
-    deskripsi:
-      'Premix vitamin dan mineral diformulasi sesuai kebutuhan spesifik ternak dan tahap produksi. Tersedia konsentrasi sesuai permintaan feed mill dan distributor.',
-    spesifikasi: [
+    summary: 'Vitamin-mineral premix formulated to your livestock\'s requirements.',
+    description:
+      'Vitamin and mineral premix formulated to the specific needs of each livestock type and production stage. Available in concentrations tailored to feed mill and distributor requirements.',
+    specifications: [
       { label: 'Grade', value: 'Custom formula' },
-      { label: 'Komposisi', value: 'Vitamin A, D3, E, K3, B-kompleks, mineral' },
-      { label: 'Kemasan', value: '20 kg HDPE' },
-      { label: 'Ketersediaan', value: 'Formulasi sesuai permintaan' },
+      { label: 'Composition', value: 'Vitamins A, D3, E, K3, B-complex, minerals' },
+      { label: 'Packaging', value: '20 kg HDPE' },
+      { label: 'Availability', value: 'Formulated on request' },
     ],
   },
   {
-    slug: 'asam-format-pakan',
-    name: 'Asam format pakan',
+    slug: 'formic-acid-feed',
+    name: 'Formic Acid Feed',
     category: 'feed-additive',
-    tags: ['Unggas', 'Babi'],
+    tags: ['Poultry', 'Swine'],
     grade: 'Feed grade 85%',
-    kemasan: '25 L jerigen',
-    ketersediaan: 'Stok terbatas',
+    packaging: '25 L jerrican',
+    availability: 'Limited stock',
     image: '/images/product_acidifier.jpg',
-    ringkas:
-      'Asam organik sebagai acidifier untuk menghambat bakteri patogen dan pengawet pakan.',
-    deskripsi:
-      'Asam format berfungsi sebagai acidifier alami yang menurunkan pH pakan dan saluran pencernaan, menghambat pertumbuhan bakteri patogen, serta meningkatkan kecernaan protein pada unggas dan babi.',
-    spesifikasi: [
+    summary:
+      'Organic acid used as an acidifier to inhibit pathogenic bacteria and preserve feed.',
+    description:
+      'Formic acid acts as a natural acidifier that lowers the pH of feed and the digestive tract, inhibits the growth of pathogenic bacteria, and improves protein digestibility in poultry and swine.',
+    specifications: [
       { label: 'Grade', value: 'Feed grade 85%' },
-      { label: 'Kandungan', value: 'Asam format 85% min.' },
-      { label: 'Kemasan', value: '25 L jerigen' },
-      { label: 'Aplikasi', value: 'Acidifier pakan' },
+      { label: 'Composition', value: 'Formic acid 85% min.' },
+      { label: 'Packaging', value: '25 L jerrican' },
+      { label: 'Application', value: 'Feed acidifier' },
     ],
   },
 ]
